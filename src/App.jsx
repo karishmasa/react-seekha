@@ -1,20 +1,19 @@
-import {useState} from 'react';
+import { useState} from 'react';
 
-function LightSwitch(){
-  const [isOn, setIsOn] =useState(true);
+function MyInput(){
+  const [text,SetText] = useState("");
 
-const handleToggle = () => {
-  setIsOn(!isOn);
-};
-return(
-  <div style={{textAlign:'center', marginTop:'50px'}}>
+return (
+<div>
+  <input type="text"
+  placeholder="Karishma..."
+  value={text}
+  onChange={(e) => SetText(e.target.value)} />
 
-    <h1>The light is {isOn ? "ON ":"Off"}</h1>
-  <button onClick={handleToggle}>
-Switch{isOn ? "Off":"ON"}
-  </button>
-  </div>
+  <p>Tumne likha: {text}</p>
+</div>
 )
 
 }
-export default LightSwitch;
+
+export default MyInput;

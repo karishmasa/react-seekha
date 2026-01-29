@@ -1,0 +1,18 @@
+🎯 Aaj ka Homework (Final Reminder)
+Jaate-jaate ek baar recap karlo:
+
+VS Code mein Counter wala code likhna hai.
+
+Usme useEffect daalna hai jo har click par console mein message dikhaye.
+
+Ek baar Greeting component bana kar use App.js mein multiple times call karna hai.
+
+hw-2
+
+Input Box banao: Jisme user apna naam likh sake.
+
+Display Name: Niche ek <h2> mein wahi naam dikhe jo type ho raha hai.
+
+Magic Button: Ek button banao "Lock Name". Jab user click kare, toh input box gayab ho jaye aur sirf naam dikhe.
+
+Conditional Styling: Agar naam 10 characters se zyada lamba ho jaye, toh uska color Red ho jaye (Hint: style={{ color: name.length > 10 ? 'red' : 'black' }}).
