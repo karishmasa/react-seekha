@@ -1,3 +1,58 @@
+import  {useState} from 'react';
+function LightSwitch(){
+  const [isOn, setIsOn]= useState(0);
+  const [ count,setCount] =useState(0);
+
+const handleToggle = () => {
+   setIsOn(!isOn);
+   setCount(count+1);
+};
+return (
+  <div>
+    <button onClick = {handleToggle}>
+Toggle{isOn? "On": "Off"}
+    </button>
+<h1 style={{color:isOn?"green" : "red"}}>
+
+  Turn{isOn?"On": "Off"}
+</h1>
+
+<p>toggled {count} times</p>
+  </div>
+)
+
+}
+
+export default LightSwitch;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //please practise it agian amny times
 
 
@@ -73,10 +128,6 @@ function App() {
 }
 
 export default App;
-
-
-
-
 
 
 /*    

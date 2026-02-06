@@ -1,19 +1,23 @@
-import { useState} from 'react';
+import {useState} from 'react';
 
-function MyInput(){
-  const [text,SetText] = useState("");
+function MyName(){
+  const [name , setName] = useState("");
+  const[locked,setLocked] =useState(false);
 
-return (
-<div>
-  <input type="text"
-  placeholder="Karishma..."
-  value={text}
-  onChange={(e) => SetText(e.target.value)} />
+  return(
+    <div>
+      {!locked && (
+      <input type="text" 
+      placeholder="Enter your Name"
+      value={name}
+      onChange={(e)=> setName(e.target.value)}
+       />)}
+       <h2 style={{color:name.length>10 ? "green" : "red"}}>{name}</h2>
+   
 
-  <p>Tumne likha: {text}</p>
-</div>
-)
+<button onClick={() => setLocked(!locked)}>
+{locked ? "Unlock Name" :"Lock Name"}</button>
 
-}
-
-export default MyInput;
+ </div>
+  )
+}export default MyName;
