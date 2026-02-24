@@ -32,4 +32,46 @@ function ProfileCard({dukn, gndr}){
   }
   export default ProfileCard;
   
-  
+  //Practise UserList.jsx
+  import { useState, useEffect } from 'react';
+
+function UserList() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('https://randomuser.me/api/?results=10')
+      .then((response) => response.json())
+      .then((data) => {
+        setUsers(data.results || []); // safe-guard in case API changes
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("API fetch failed:", err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <h2>Data aa rahi hai, thoda wait karo...</h2>;
+
+  return (
+    <div>
+      <h2>User Directory</h2>
+      {users.length === 0 ? (
+        <p>Koi user nahi mila 😕</p>
+      ) : (
+        <ul>
+          {users.map((user, index) => (
+            <li key={user.login?.uuid || index}>
+              {user.name?.first} {user.name?.last} 
+              <br />
+              <small>{user.email}</small>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+export default UserList;
